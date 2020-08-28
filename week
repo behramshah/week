@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace week_days
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] week = new string[7] {"Monday","Tuesday","Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+            int day;
+        link1:
+            Console.WriteLine("Type day");
+            bool check = Int32.TryParse(Console.ReadLine(), out day);
+            if (check)
+            {
+                Console.WriteLine(" ");
+            }
+            else 
+            {
+                Console.WriteLine("parametr yalnış daxil edilib!"); goto link1;
+            }
+            if (day<1||day>7) { Console.WriteLine("parametr yalnış daxil edilib!"); goto link1; }
+            
+            else { Console.WriteLine(week[day - 1]); }
+            Console.WriteLine("Yeniden yoxlamaq isteyirsiniz? (Bəli uchun 1 daxil edin)");
+            int repeat;
+            repeat = Convert.ToInt32(Console.ReadLine());
+            if (repeat == 1) { goto link1; }
+            else
+            {
+                Console.WriteLine("Proqram sona chatdi");
+            }
+
+                Console.ReadKey();
+
+        }
+
+        }
+    }
